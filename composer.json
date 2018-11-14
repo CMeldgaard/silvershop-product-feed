@@ -3,7 +3,7 @@
   "description": "",
   "type": "silverstripe-module",
   "keywords": ["silverstripe", "google", "shopping", "PPC", "adwords"],
-  "license": "BSD",
+  "license": "BSD-2-Clause",
   "authors": [{
 	"name": "Lund&co",
 	"email": "info@lund-co.dk"

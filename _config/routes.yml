@@ -1,0 +1,9 @@
+---
+Name: productfeedroutes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+Director:
+  rules:
+    'productfeeds//$Action': 'ProductFeedController'

@@ -1,0 +1,19 @@
+{
+  "name": "lundco/silvershop-product-feed",
+  "description": "",
+  "type": "silverstripe-module",
+  "keywords": ["silverstripe", "google", "shopping", "PPC", "adwords"],
+  "license": "BSD",
+  "authors": [{
+	"name": "Lund&co",
+	"email": "info@lund-co.dk"
+  }],
+  "require": {
+	"php": ">=5.4.1",
+	"silverstripe/framework": "~3.1",
+	"tractorcow/silverstripe-autocomplete": "~3.5"
+  },
+  "extra": {
+	"installer-name": "silvershop-product-feed"
+  }
+}

@@ -5,7 +5,8 @@ class ProductFeedExtension extends DataExtension
     private static $db = [
         'RemoveFromProductFeed' => 'Boolean',
         'GoogleCondition'       => 'Enum(array("new","refurbished","used"),"new")',
-        'Brand'                 => 'Varchar'
+        'Brand'                 => 'Varchar',
+        'EAN'                   => 'Varchar'
     ];
 
     private static $has_one = [
@@ -17,8 +18,9 @@ class ProductFeedExtension extends DataExtension
     public function updateCMSFields(FieldList $fields)
     {
         $fields->addFieldsToTab('Root.ProductFeeds', [
-            CheckboxField::create('RemoveFromShoppingFeed'),
+            CheckboxField::create('RemoveFromProductFeed'),
             TextField::create('Brand'),
+            TextField::create('EAN'),
             ToggleCompositeField::create(
                 'GoogleShoppingSettings',
                 _t(

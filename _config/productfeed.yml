@@ -3,4 +3,8 @@ Name: productfeed
 ---
 Product:
   extensions:
-    - ProductFeedExtension
+    - ProductFeedProductFeedExtension
+
+ProductVariation:
+  extensions:
+    - ProductFeedProductVariationExtension

@@ -13,6 +13,7 @@
                         <productPrice>$Price $Top.Currency</productPrice>
                         <productEAN>$EAN</productEAN>
 						<% if $Up.PricerunnerProductCategory.exists %><productCategory>$Up.PricerunnerProductCategory.Title</productCategory><% end_if %>
+                        <productDeliveryTime><% if $Up.PricerunnerDeliveryTime %>$Up.PricerunnerDeliveryTime<% else %>$Top.DefaultDelivery<% end_if %></productDeliveryTime>
                     </product>
 				<% end_if %>
 			<% end_loop %>
@@ -25,6 +26,7 @@
                 <productURL>$AbsoluteLink</productURL>
                 <productPrice>$Price $Top.Currency</productPrice>
 				<% if $PricerunnerProductCategory.exists %><productCategory>$PricerunnerProductCategory.Title</productCategory><% end_if %>
+                <productDeliveryTime><% if $PricerunnerDeliveryTime %>$PricerunnerDeliveryTime<% else %>$Top.DefaultDelivery<% end_if %></productDeliveryTime>
             </product>
 		<% end_if %>
 	<% end_loop %>

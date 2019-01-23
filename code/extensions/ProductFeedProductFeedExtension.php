@@ -3,10 +3,11 @@
 class ProductFeedProductFeedExtension extends DataExtension
 {
     private static $db = [
-        'RemoveFromProductFeed' => 'Boolean',
-        'GoogleCondition'       => 'Enum(array("new","refurbished","used"),"new")',
-        'Brand'                 => 'Varchar',
-        'EAN'                   => 'Varchar'
+        'RemoveFromProductFeed'   => 'Boolean',
+        'GoogleCondition'         => 'Enum(array("new","refurbished","used"),"new")',
+        'Brand'                   => 'Varchar',
+        'EAN'                     => 'Varchar',
+        'PricerunnerDeliveryTime' => 'Varchar'
     ];
 
     private static $has_one = [
@@ -22,7 +23,7 @@ class ProductFeedProductFeedExtension extends DataExtension
         $brandField = new TextField('Brand');
         $eanField = new TextField('EAN');
 
-        $googleShopping = new ToggleCompositeField( 'GoogleShoppingSettings',
+        $googleShopping = new ToggleCompositeField('GoogleShoppingSettings',
             _t(
                 'GoogleShoppingFeed.GoogleShoppingFeed',
                 'Google Shopping Feed'
@@ -44,7 +45,7 @@ class ProductFeedProductFeedExtension extends DataExtension
                 )
             ]);
 
-        $priceRunner = new ToggleCompositeField( 'PriceRunnerSettings',
+        $priceRunner = new ToggleCompositeField('PriceRunnerSettings',
             _t(
                 'GoogleShoppingFeed.GoogleShoppingFeed',
                 'Pricerunner Shopping Feed'
@@ -58,16 +59,17 @@ class ProductFeedProductFeedExtension extends DataExtension
                     null,
                     'ProductFeedCategory',
                     'Title'
-                )
+                ),
+                TextField::create('PricerunnerDeliveryTime', 'Leveringstid')
             ]);
 
-        if ($fields->fieldByName('Root')){
+        if ($fields->fieldByName('Root')) {
             if (is_string($this->owner->has_many('Variations')) && $this->owner->Variations()->exists()) {
                 $fields->addFieldToTab('Root.ProductFeeds', $removeField);
                 $fields->addFieldToTab('Root.ProductFeeds', $brandField);
                 $fields->addFieldToTab('Root.ProductFeeds', $googleShopping);
                 $fields->addFieldToTab('Root.ProductFeeds', $priceRunner);
-            }else{
+            }else {
                 $fields->addFieldToTab('Root.ProductFeeds', $removeField);
                 $fields->addFieldToTab('Root.ProductFeeds', $brandField);
                 $fields->addFieldToTab('Root.ProductFeeds', $eanField);

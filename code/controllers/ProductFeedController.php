@@ -48,8 +48,9 @@ class ProductFeedController extends Controller
         $this->extend('updateGoogleShoppingFeedItems', $items);
 
         return $this->customise(new ArrayData(array(
-            "SiteConfig" => SiteConfig::current_site_config(),
-            'Items'      => $items
+            'SiteConfig'      => SiteConfig::current_site_config(),
+            'Items'           => $items,
+            'DefaultDelivery' => Config::inst()->get('ProductFeedController', 'DefaultDelivery')
         )))->renderWith("pricerunner");
     }
 

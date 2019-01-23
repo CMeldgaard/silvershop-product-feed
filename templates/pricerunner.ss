@@ -25,6 +25,7 @@
                 <imageURL>$Image.AbsoluteLink</imageURL>
                 <productURL>$AbsoluteLink</productURL>
                 <productPrice>$Price $Top.Currency</productPrice>
+                <productEAN>$EAN</productEAN>
 				<% if $PricerunnerProductCategory.exists %><productCategory>$PricerunnerProductCategory.Title</productCategory><% end_if %>
                 <productDeliveryTime><% if $PricerunnerDeliveryTime %>$PricerunnerDeliveryTime<% else %>$Top.DefaultDelivery<% end_if %></productDeliveryTime>
             </product>

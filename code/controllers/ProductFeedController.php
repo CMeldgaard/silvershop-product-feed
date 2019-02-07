@@ -20,7 +20,7 @@ class ProductFeedController extends Controller
             'X-Robots-Tag',
             'noindex'
         );
-        $items = Product::get()->filter('RemoveFromProductFeed', false);
+        $items = Product::get()->filter('RemoveFromProductFeed', false)->exclude('ClassName','GiftVoucherProduct');
 
         $this->extend('updateGoogleShoppingFeedItems', $items);
 
@@ -43,7 +43,7 @@ class ProductFeedController extends Controller
             'X-Robots-Tag',
             'noindex'
         );
-        $items = Product::get()->filter('RemoveFromProductFeed', false);
+        $items = Product::get()->filter('RemoveFromProductFeed', false)->exclude('ClassName','GiftVoucherProduct');
 
         $this->extend('updateGoogleShoppingFeedItems', $items);
 

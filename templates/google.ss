@@ -18,6 +18,7 @@
                         <g:image_link>{$Up.Image.AbsoluteLink}</g:image_link>
                         <g:price>$Price</g:price>
                         <g:condition>$Up.GoogleCondition</g:condition>
+	                    <g:gtin>$EAN</g:gtin>
 	                    <% if $hasAvailableStock %><g:availability>In Stock</g:availability><% end_if %>
 	                    <% if not $hasAvailableStock %><g:availability>Out of Stock</g:availability><% end_if %>
 	                    <% if $Up.Brand %><g:brand>$Up.Brand</g:brand><% end_if %>
@@ -36,6 +37,7 @@
 					<g:image_link>{$Image.AbsoluteLink}</g:image_link>
                     <g:price>$Price</g:price>
                     <g:condition>$GoogleCondition</g:condition>
+                    <g:gtin>$EAN</g:gtin>
 	                <% if $hasAvailableStock %><g:availability>In Stock</g:availability><% end_if %>
 	                <% if not $hasAvailableStock %><g:availability>Out of Stock</g:availability><% end_if %>
 	                <% if $Brand %><g:brand>$Brand</g:brand><% end_if %>

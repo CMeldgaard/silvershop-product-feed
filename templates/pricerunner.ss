@@ -12,6 +12,8 @@
                         <productURL>$Up.AbsoluteLink</productURL>
                         <productPrice>$Price $Top.Currency</productPrice>
                         <productEAN>$EAN</productEAN>
+						<% if $hasAvailableStock %><productAvailability>In Stock</productAvailability><% end_if %>
+						<% if not $hasAvailableStock %><productAvailability>Out of Stock</productAvailability><% end_if %>
 						<% if $Up.PricerunnerProductCategory.exists %><productCategory>$Up.PricerunnerProductCategory.Title</productCategory><% end_if %>
                         <productDeliveryTime><% if $Up.PricerunnerDeliveryTime %>$Up.PricerunnerDeliveryTime<% else %>$Top.DefaultDelivery<% end_if %></productDeliveryTime>
                     </product>
@@ -26,6 +28,8 @@
                 <productURL>$AbsoluteLink</productURL>
                 <productPrice>$Price $Top.Currency</productPrice>
                 <productEAN>$EAN</productEAN>
+				<% if $hasAvailableStock %><productAvailability>In Stock</productAvailability><% end_if %>
+				<% if not $hasAvailableStock %><productAvailability>Out of Stock</productAvailability><% end_if %>
 				<% if $PricerunnerProductCategory.exists %><productCategory>$PricerunnerProductCategory.Title</productCategory><% end_if %>
                 <productDeliveryTime><% if $PricerunnerDeliveryTime %>$PricerunnerDeliveryTime<% else %>$Top.DefaultDelivery<% end_if %></productDeliveryTime>
             </product>

@@ -45,7 +45,7 @@ class ProductFeedController extends Controller
         );
         $items = Product::get()->filter('RemoveFromProductFeed', false)->exclude('ClassName','GiftVoucherProduct');
 
-        $this->extend('updateGoogleShoppingFeedItems', $items);
+        $this->extend('updatePricerunnerFeedItems', $items);
 
         return $this->customise(new ArrayData(array(
             'SiteConfig'      => SiteConfig::current_site_config(),

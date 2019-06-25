@@ -43,7 +43,7 @@ class ProductFeedController extends Controller
             'X-Robots-Tag',
             'noindex'
         );
-        $items = Product::get()->filter('RemoveFromProductFeed', false)->exclude('ClassName','GiftVoucherProduct');
+        $items = Product::get()->exclude('ClassName','GiftVoucherProduct');
 
         $this->extend('updatePricerunnerFeedItems', $items);
 

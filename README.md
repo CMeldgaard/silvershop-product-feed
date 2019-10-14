@@ -1,4 +1,4 @@
-# SilverStripe Shop Stock Management
+# SilverStripe Shop Product Feed
 
 Adds product feed for SilverShop.
 

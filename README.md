@@ -5,7 +5,7 @@ Adds product feed for SilverShop.
 
 ## Installation
 
-composer require "lundco/silvershop-product-feed"
+composer require "meldgaard/silvershop-product-feed"
 
 ## Feeds
 The module currently generates XML-feeds to the following:
